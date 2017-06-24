@@ -1,17 +1,21 @@
-<h1>Edit Review</h1>
+<div class="col-md-6 col-md-offset-3">
+	<div class="edit-review-form">
 
-<%= simple_form_for([@book, @review]) do |f| %>
+		<h1>Edit Review</h1>
 
-<div id="rating-form">
-	<label>Rating</label>
+		<%= simple_form_for([@book, @review]) do |f| %>
+
+		<div id="rating-form">
+			<label>Rating</label>
+		</div>
+		<%= f.input :comment %>
+		<%= f.button :submit, :class= => 'btn btn-custom2' %>
+		<% end %>
+	</div>
 </div>
-<%= f.input :comment %>
-<%= f.button :submit %>
-<% end %>
-	
-	<script>
-		$('#rating-form').raty({
-			path: '/assets/',
-			scoreName: 'review[rating]'
-		});
-	</script>
+<script>
+	$('#rating-form').raty({
+		path: '/assets/',
+		scoreName: 'review[rating]'
+	});
+</script>
